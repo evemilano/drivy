@@ -1,0 +1,45 @@
+# File e cartelle generati da Flutter/Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+
+# File generati dagli strumenti di build nativi
+
+## Android
+*.apk
+*.aab
+*.keystore
+*.jks
+/android/app/src/main/assets/flutter_assets/
+/android/key.properties
+/android/local.properties
+
+## iOS
+/ios/Pods/
+/ios/Runner/GeneratedPluginRegistrant.h
+/ios/Runner/GeneratedPluginRegistrant.m
+/ios/Flutter/App.framework
+/ios/Flutter/engine.xcconfig
+/ios/Flutter/pod_helper.rb
+/ios/Flutter/flutter_export_environment.sh
+.ios/
+
+# File specifici degli IDE
+.idea/
+.vscode/
+*.iml
+*.hprof
+*.log
+
+# File di configurazione locale (es. per API keys)
+# È buona norma non committare mai file .env
+.env*
+
+# File di sistema operativo
+.DS_Store
+Thumbs.db
+
+# File di crash
+flutter_*.log
