@@ -1,0 +1,36 @@
+name: storage_analyzer_pro
+description: "An application to analyze device storage."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_chart: ^1.1.1
+  permission_handler: ^12.0.1 # Updated to latest
+  flutter_riverpod: ^1.0.3
+  riverpod: ^1.0.3 # Explicitly added riverpod
+  disk_space: ^0.2.1 # This version is resolvable, but will be overridden.
+  path_provider: ^2.1.3
+  path: ^1.9.0
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  device_info_plus: ^12.1.0 # Updated to latest
+  open_filex: ^4.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# This section forces Flutter to use the local copy of the package.
+dependency_overrides:
+  disk_space:
+    path: packages/disk_space # FINAL AND LOCAL OVERRIDE
+
+flutter:
+  uses-material-design: true
