@@ -169,22 +169,49 @@ class RealStorageRepository implements StorageRepository {
     final dir = Directory(path);
     final List<FileSystemEntityInfo> contents = [];
     try {
+      // Check if the directory exists and is accessible
+      if (!await dir.exists()) {
+        debugPrint('Directory does not exist or is not accessible: $path');
+        return [];
+      }
+
       final entities = await dir.list(followLinks: false).toList();
 
       for (final entity in entities) {
         double size = 0.0;
         if (entity is File) {
-          final bytes = await entity.length();
-          size = bytes / (1024 * 1024 * 1024); // Convert to GB
+          try {
+            final bytes = await entity.length();
+            size = bytes / (1024 * 1024 * 1024); // Convert to GB
+          } catch (e) {
+            debugPrint('Error getting size for file ${entity.path}: $e');
+            // If file size cannot be obtained, treat as 0
+            size = 0.0;
+          }
         } else if (entity is Directory) {
-          size = await compute(_calculateDirectorySize, entity.path);
+          // For directories, we initially set size to 0 to avoid deep recursive calculation
+          // This prevents the UI from freezing on initial load for large directories.
+          // The actual size can be calculated when navigating into the directory or on demand.
+          size = 0.0; // Placeholder size for directories
         }
-        if (size > 0) {
+        // Only add entities with a size greater than 0 or directories (even with 0 size)
+        // to ensure all items are listed.
+        if (size > 0 || entity is Directory) {
           contents.add(FileSystemEntityInfo(entity: entity, size: size));
         }
       }
 
-      contents.sort((a, b) => b.size.compareTo(a.size));
+      // Sort directories first, then files, then by size (descending)
+      contents.sort((a, b) {
+        final isADirectory = a.entity is Directory;
+        final isBDirectory = b.entity is Directory;
+
+        if (isADirectory && !isBDirectory) return -1; // A (dir) comes before B (file)
+        if (!isADirectory && isBDirectory) return 1;  // B (dir) comes before A (file)
+
+        // If both are same type, sort by size
+        return b.size.compareTo(a.size);
+      });
 
       return contents;
     } catch (e) {
