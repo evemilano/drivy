@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math'; // For log and pow in _getFormattedSize
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:storage_analyzer_pro/features/analysis/analysis_provider.dart';
+import 'package:drivy/features/analysis/analysis_provider.dart';
 import 'package:open_filex/open_filex.dart'; // Import open_filex
 import 'package:path/path.dart' as p; // Import path package
 
@@ -181,6 +181,13 @@ class _FileDetailScreenState extends ConsumerState<FileDetailScreen> {
               child: Text('No files found for extension ${widget.extension.toUpperCase()}'), // Fixed string interpolation
             );
           }
+
+          // Sort files by size in descending order
+          filesForExtension.sort((a, b) {
+            final sizeA = a is Directory ? 0 : (a as File).lengthSync();
+            final sizeB = b is Directory ? 0 : (b as File).lengthSync();
+            return sizeB.compareTo(sizeA);
+          });
 
           return ListView.builder(
             itemCount: filesForExtension.length,

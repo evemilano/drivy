@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:storage_analyzer_pro/features/file_explorer/file_explorer_screen.dart';
-import 'package:storage_analyzer_pro/core/providers/providers.dart';
-import 'package:storage_analyzer_pro/features/dashboard/widgets/top_extensions_card.dart';
+import 'package:drivy/features/file_explorer/file_explorer_screen.dart';
+import 'package:drivy/core/providers/providers.dart';
+import 'package:drivy/features/dashboard/widgets/top_extensions_card.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
   const DashboardScreen({super.key});
@@ -142,7 +142,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Storage Analyzer Pro', style: textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onSurface)),
+        title: Text('Drivy', style: textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onSurface)),
         actions: [
           IconButton(
             icon: const Icon(Icons.folder_special_outlined),

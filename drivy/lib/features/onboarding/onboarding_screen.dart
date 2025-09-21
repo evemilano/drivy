@@ -1,4 +1,4 @@
-import 'package:storage_analyzer_pro/features/dashboard/dashboard_screen.dart';
+import 'package:drivy/features/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -48,7 +48,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Storage Analyzer Pro'),
+        title: const Text('Drivy'),
       ),
       body: Center(
         child: Padding(

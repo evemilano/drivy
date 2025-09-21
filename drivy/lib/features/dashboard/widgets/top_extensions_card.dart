@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:storage_analyzer_pro/features/analysis/analysis_provider.dart';
-import 'package:storage_analyzer_pro/features/analysis/file_categorizer.dart'; // Import ExtensionSummary
-import 'package:storage_analyzer_pro/features/analysis/file_detail_screen.dart'; // Import the new screen
+import 'package:drivy/features/analysis/analysis_provider.dart';
+import 'package:drivy/features/analysis/file_categorizer.dart'; // Import ExtensionSummary
+import 'package:drivy/features/analysis/file_detail_screen.dart'; // Import the new screen
 
 class TopExtensionsCard extends ConsumerWidget {
   final String selectedPath;

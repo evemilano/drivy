@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:storage_analyzer_pro/data/storage_repository.dart';
-import 'package:storage_analyzer_pro/core/utils/storage_utils.dart';
+import 'package:drivy/data/storage_repository.dart';
+import 'package:drivy/core/utils/storage_utils.dart';
 
 // --- Global Refresh Signal ---
 // A simple provider that acts as a global trigger for data refreshes.

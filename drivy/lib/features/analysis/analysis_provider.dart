@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:storage_analyzer_pro/features/analysis/file_categorizer.dart';
+import 'package:drivy/features/analysis/file_categorizer.dart';
 import 'package:path/path.dart' as p;
 
 /// Provider that handles scanning and categorizing REAL files by extension for a given path.
