@@ -1,7 +1,7 @@
-import 'package:storage_analyzer_pro/onboarding_screen.dart';
+import 'package:storage_analyzer_pro/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:storage_analyzer_pro/theme.dart';
+import 'package:storage_analyzer_pro/core/theme/theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
