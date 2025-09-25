@@ -5,8 +5,6 @@ Drivy is a utility to analyze the storage space on your device. It helps you to 
 ## Features
 
 * **Detailed Space Analysis:** Get a comprehensive overview of your device's storage.
-* **[Add Feature 2]:** [Briefly describe the feature]
-* **[Add Feature 3]:** [Briefly describe the feature]
 
 ## Supported Platforms
 
