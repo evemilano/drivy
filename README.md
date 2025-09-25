@@ -1,4 +1,10 @@
-````txt
+Hai ragione, la formattazione che hai incollato presenta alcuni problemi, specialmente nel modo in cui sono gestiti i blocchi di codice all'interno degli elenchi puntati. Questo può portare a una visualizzazione errata su GitHub.
+
+Il problema principale è che i blocchi di codice (quelli con \`\`\`sh) non sono correttamente indentati per far parte di un punto dell'elenco. Inoltre, all'interno di un blocco di codice, i link in formato Markdown non vengono interpretati e vanno inseriti come testo semplice.
+
+Ecco la versione corretta del file `README.md`, pronta per essere copiata e incollata.
+
+````markdown
 # Drivy - Device Space Analyzer
 
 Drivy is a utility to analyze the storage space on your device. It helps you to understand what is taking up space and to manage your files and folders effectively.
@@ -49,12 +55,14 @@ This application is built using a variety of languages, suggesting support for m
 
 1.  Clone the repository:
     ```sh
-    git clone [https://github.com/evemilano/drivy.git](https://github.com/evemilano/drivy.git)
+    git clone https://github.com/evemilano/drivy.git
     ```
+
 2.  Navigate to the project directory:
     ```sh
     cd drivy
     ```
+
 3.  [Add build commands, e.g., `flutter pub get`, `cmake .`, `make`, etc.]
 
 ## Contributing
