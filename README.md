@@ -4,49 +4,52 @@ Drivy is a utility to analyze the storage space on your device. It helps you to 
 
 ## Features
 
-* **Detailed Space Analysis:** Get a comprehensive overview of your device's storage.
+* **Detailed Space Analysis:** Get a comprehensive overview of your device's storage usage with detailed statistics for every folder and file type.
+* **Interactive Visual Treemaps:** Navigate your storage visually. Larger files and folders appear as larger rectangles, making it easy to spot what's consuming the most space.
+* **Duplicate File Finder:** Scan your drives to find and safely remove duplicate files, freeing up valuable space.
+* **Largest Files & Folders Identification:** Quickly list the top 100 largest files and folders on your device to target for cleanup.
 
 ## Supported Platforms
 
-This application is built using a variety of languages, suggesting support for multiple platforms:
+This application is designed to be cross-platform. Based on the technologies used (Dart/Flutter for the UI, C++ for the core engine, Swift/Java for native integrations), the supported platforms are:
 
-* **[Platform 1 e.g., Android]:** [Supported]
-* **[Platform 2 e.g., iOS]:** [Supported]
-* **[Platform 3 e.g., Windows/macOS/Linux]:** [Supported/Not Supported]
+* **Windows:** Supported
+* **macOS:** Supported
+* **Linux:** Supported
+* **Android:** Supported
+* **iOS:** Supported
 
 ## Installation
 
-[Provide clear, step-by-step instructions on how to install your application. If it's available on an app store, provide a link. If it needs to be compiled, link to the "Building from source" section.]
-
-**Example:**
-
-1.  Download the latest release from the [Releases page](https://github.com/evemilano/drivy/releases).
-2.  Follow the on-screen instructions to install the application.
+Currently, Drivy is available by building it directly from the source code. Non ci sono ancora pacchetti di installazione pre-compilati. Per le istruzioni, fai riferimento alla sezione "Building from source".
 
 ## Usage
 
-[Explain how to use the application. You can include screenshots or code examples to make it clearer.]
-
-**Example:**
-
-1.  Launch the Drivy application.
-2.  Grant the necessary permissions to access device storage.
-3.  The main screen will show a visual representation of your storage.
-4.  Tap on a folder to see a breakdown of its contents.
+1.  **Launch the Drivy application.**
+2.  **Select a Drive or Folder:** Choose the storage drive or specific folder you wish to analyze.
+3.  **Start Scan:** The application will perform a high-speed scan of the selected path.
+4.  **Explore Results:** Once the scan is complete, you can navigate the interactive treemap to explore your data.
+5.  **Clean Up:** Use the built-in tools like the "Duplicate Finder" to manage and delete unnecessary files.
 
 ## Building from source
 
-[Provide instructions for developers who want to build the project from the source code.]
+To compile the project, you need a development environment configured for Flutter with support for native C++ compilation.
 
 **Prerequisites:**
 
-* [List any prerequisites, e.g., Flutter SDK, C++ compiler, etc.]
+* **Flutter SDK:** Version 3.0 or higher.
+* **C++ Compiler:**
+    * Windows: Visual Studio with "Desktop development with C++" workload.
+    * macOS: Xcode Command Line Tools.
+    * Linux: `build-essential` package (or equivalent).
+* **CMake:** Version 3.16 or higher.
+* **Git:** For cloning the repository.
 
 **Steps:**
 
 1.  Clone the repository:
     ```sh
-    git clone https://github.com/evemilano/drivy.git
+    git clone [https://github.com/evemilano/drivy.git](https://github.com/evemilano/drivy.git)
     ```
 
 2.  Navigate to the project directory:
@@ -54,7 +57,15 @@ This application is built using a variety of languages, suggesting support for m
     cd drivy
     ```
 
-3.  [Add build commands, e.g., `flutter pub get`, `cmake .`, `make`, etc.]
+3.  Get Flutter dependencies:
+    ```sh
+    flutter pub get
+    ```
+
+4.  Build and run the application:
+    ```sh
+    flutter run
+    ```
 
 ## Contributing
 
@@ -69,4 +80,3 @@ Copyright (c) 2025 Giovanni Sacheli (evemilano)
 All rights reserved. The use, reproduction, modification, distribution, or sublicensing of this software, in whole or in part, is strictly prohibited without the prior express written permission of the copyright holder.
 
 For licensing inquiries, please contact the author.
-````
